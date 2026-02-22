@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    @apply bg-black text-white antialiased overflow-x-hidden;
+    font-family: 'Inter', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  }
+
+  /* Custom cursor glow */
+  .cursor-glow {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: screen;
+    transition: transform 0.1s ease;
+    will-change: transform;
+  }
+
+  /* Glassmorphism base */
+  .glass {
+    @apply backdrop-blur-xl bg-white/5 border border-white/10;
+  }
+
+  .glass-card {
+    @apply glass rounded-2xl shadow-2xl shadow-white/5;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Selection style */
+  ::selection {
+    @apply bg-white/20 text-white;
+  }
+}
+
+@layer components {
+  .premium-input {
+    @apply w-full px-6 py-4 bg-white/5 border border-white/10 rounded-xl 
+           text-white placeholder-white/30 outline-none
+           focus:border-white/40 focus:bg-white/10 focus:ring-2 focus:ring-white/20
+           transition-all duration-300 backdrop-blur-md;
+  }
+
+  .premium-button {
+    @apply relative px-8 py-4 bg-white text-black font-semibold rounded-xl
+           overflow-hidden transition-all duration-300
+           hover:bg-white/90 hover:scale-105 hover:shadow-[0_0_30px_rgba(255,255,255,0.5)]
+           active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed
+           disabled:hover:scale-100 disabled:hover:shadow-none;
+  }
+
+  .premium-button::after {
+    content: '';
+    @apply absolute inset-0 bg-white/30 scale-0 rounded-full;
+  }
+
+  .premium-button:active::after {
+    animation: ripple 1s cubic-bezier(0, 0, 0.2, 1);
+  }
+
+  .nav-link {
+    @apply text-white/70 hover:text-white transition-colors duration-300
+           relative after:content-[''] after:absolute after:bottom-0 after:left-0 
+           after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300
+           hover:after:w-full;
+  }
+}
+
+@layer utilities {
+  /* Floating shapes animation */
+  .floating-shape {
+    @apply absolute rounded-full mix-blend-screen animate-float;
+    filter: blur(60px);
+  }
+}
