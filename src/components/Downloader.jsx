@@ -38,12 +38,11 @@ const Downloader = () => {
       await new Promise(resolve => setTimeout(resolve, 3000))
       
       // For demo purposes - create a dummy blob
-      const dummyBlob = new Blob(['Dummy video content'], { type: 'video/mp4' })
-      const downloadUrl = window.URL.createObjectURL(dummyBlob)
+      
       const link = document.createElement('a')
       link.href = downloadUrl
-      link.download = 'video.mp4'
-      link.click()
+     
+     
       window.URL.revokeObjectURL(downloadUrl)
       
       setSuccess('Video downloaded successfully!')
@@ -145,7 +144,7 @@ const Downloader = () => {
                 </div>
                 <div>
                   <p className="text-sm font-light text-white/90">{success}</p>
-                  <p className="text-xs text-white/50 font-light">Your video has been saved</p>
+                
                 </div>
               </div>
             </motion.div>
@@ -175,5 +174,6 @@ const Downloader = () => {
     </motion.div>
   )
 }
+
 
 export default Downloader
