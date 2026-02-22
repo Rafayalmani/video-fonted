@@ -39,10 +39,11 @@ const Downloader = () => {
       
       // For demo purposes - create a dummy blob
       
+      
       const link = document.createElement('a')
       link.href = downloadUrl
-     
-     
+      
+      
       window.URL.revokeObjectURL(downloadUrl)
       
       setSuccess('Video downloaded successfully!')
@@ -144,7 +145,7 @@ const Downloader = () => {
                 </div>
                 <div>
                   <p className="text-sm font-light text-white/90">{success}</p>
-                
+                  <p className="text-xs text-white/50 font-light">Your video has been saved</p>
                 </div>
               </div>
             </motion.div>
@@ -174,6 +175,5 @@ const Downloader = () => {
     </motion.div>
   )
 }
-
 
 export default Downloader
