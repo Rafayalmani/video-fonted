@@ -13,13 +13,13 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          {/* Logo */}
+          
           <motion.div
             whileHover={{ scale: 1.05 }}
             className="flex items-center gap-2"
           >
-            <HiOutlineSparkles className="w-6 h-6 text-white" />
             
+            <span className="text-xl font-light tracking-tight">
               ALMANI.
               
             </span>
@@ -59,3 +59,4 @@ const Navbar = () => {
 
 
 export default Navbar
+
