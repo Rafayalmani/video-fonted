@@ -19,9 +19,9 @@ const Navbar = () => {
             className="flex items-center gap-2"
           >
             <HiOutlineSparkles className="w-6 h-6 text-white" />
-            <span className="text-xl font-light tracking-tight">
-              LUMINA
-              <span className="text-xs align-top ml-1 opacity-50">™</span>
+            
+              ALMANI.
+              
             </span>
           </motion.div>
 
@@ -56,5 +56,6 @@ const Navbar = () => {
     </motion.nav>
   )
 }
+
 
 export default Navbar
