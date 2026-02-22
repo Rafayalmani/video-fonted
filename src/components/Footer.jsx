@@ -15,7 +15,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           {/* Copyright */}
           <div className="text-white/40 text-sm font-light">
-            © {currentYear} LUMINA. All rights reserved.
+            © 2026 Almani. All rights reserved.
           </div>
 
           {/* Links */}
@@ -40,12 +40,13 @@ const Footer = () => {
             >
               <HiOutlineHeart className="w-4 h-4 text-white/60" />
             </motion.div>
-            <span>in the cloud</span>
+            <span>by Rafay almani</span>
           </div>
         </div>
       </div>
     </motion.footer>
   )
 }
+
 
 export default Footer
